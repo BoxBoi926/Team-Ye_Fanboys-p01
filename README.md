@@ -1,4 +1,4 @@
-# Morning Outlook by Andy_Sucks
+# Morning Outlook by ye_fanboys
 
 ## Roster with Roles:
 Andy Lin: Implementing API's
