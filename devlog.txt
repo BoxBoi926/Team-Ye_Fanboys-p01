@@ -1,3 +1,9 @@
 Team : Mark Zhu, Andy Lin, David Chong, Shadman Rakib
 SoftDev
 P01 -- Restful API
+
+andyL -- 2021-12-09 21:00
+
+- edited the design doc to fix issue where there was no actual chain of frameworks or programs used in order to render the website
+- added data types to the database storage because of complaints and labeled what the database tables are for
+- tried to clarify what the user added widgets were from links
