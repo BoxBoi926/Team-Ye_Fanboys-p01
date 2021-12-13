@@ -17,3 +17,13 @@ andyL -- 2021-12-09 21:00
 davidC -- 2021-12-09 23:30
 
 - added beginning paragraph to design doc to explain the project's intentions.
+
+andyL -- 2021-12-10 09:20
+
+- added requirements.txt
+- started work on bringing in the weather api (which works mostly, but getting accurate location data is another story)
+
+andyL -- 2021-12-13 09:26
+
+- continued to work on getting better location data for the weather api (but did not work out)
+- added a news api to parse out the news to the jinja page
