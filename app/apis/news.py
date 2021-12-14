@@ -8,5 +8,3 @@ def getNews():
     siteData = urlrequest.urlopen(url)
 
     return json.load(siteData)['news']
-
-getNews()
