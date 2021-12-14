@@ -27,3 +27,13 @@ andyL -- 2021-12-13 09:26
 
 - continued to work on getting better location data for the weather api (but did not work out)
 - added a news api to parse out the news to the jinja page
+
+shadmanR -- 2021-12-13 09:26
+
+- worked on setting up auth and database
+
+
+shadmanR -- 2021-12-13 19:39
+
+- merged classwork with teammates work and resolved conflicts
+
