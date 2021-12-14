@@ -43,3 +43,14 @@ shadmanR -- 2021-12-13 19:39
 markZ -- 2021-12-14 09:20
 
 - continued work on the html template for the main page
+
+andyL -- 2021-12-13 09:26
+
+- added the kanye api and tried to troubleshoot a 503 error that kept occuring
+
+andyL -- 2021-12-13 15:25
+
+- fixed the issue where the kanye api failed to load (probably because the kanye api thought we were a bot based on the fact that no browser data was attached)
+- added 411 on unsplash api so that I can implement the api
+- implemented the unsplash api
+- removed code references from testing the other apis to see if they worked
