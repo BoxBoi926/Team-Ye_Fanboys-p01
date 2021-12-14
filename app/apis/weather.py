@@ -1,6 +1,5 @@
 import urllib.parse as urlparse, urllib.request as urlrequest
-from urllib.parse import urlencode
-import json, socket
+import json
 
 apiKey = "a591cc0b3ce141668cc142051211012"
 
@@ -17,6 +16,4 @@ def getWeatherForCurrentLocation():
     urlParts[4] = urlparse.urlencode(query)
     siteData = urlrequest.urlopen(urlparse.urlunparse(urlParts))
     data = json.load(siteData)
-    print(data)
-
-getWeatherForCurrentLocation()
+    return data
