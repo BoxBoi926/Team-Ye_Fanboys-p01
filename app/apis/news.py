@@ -1,6 +1,5 @@
-import urllib.parse as urlparse, urllib.request as urlrequest
-from urllib.parse import urlencode
-import json, socket
+import urllib.request as urlrequest
+import json
 
 apiKey = "ZWgYdADsBPmpURWcbpTvGO4P8bsGtQMoriq9beSZTzYrADOE"
 
