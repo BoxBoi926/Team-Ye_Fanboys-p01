@@ -1,5 +1,4 @@
 import urllib.request as urlrequest
-import urllib
 import json
 
 def getQuote():
