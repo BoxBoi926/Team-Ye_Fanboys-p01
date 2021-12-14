@@ -1,4 +1,4 @@
-Team : Mark Zhu, Andy Lin, David Chong, Shadman Rakib
+Team Ye_FanBoys: Mark Zhu, Andy Lin, David Chong, Shadman Rakib
 SoftDev
 P01 -- Restful API
 
@@ -32,8 +32,14 @@ shadmanR -- 2021-12-13 09:26
 
 - worked on setting up auth and database
 
+markZ -- 2021-12-13 09:30
+
+- worked on the html template for the main page
 
 shadmanR -- 2021-12-13 19:39
 
 - merged classwork with teammates work and resolved conflicts
 
+markZ -- 2021-12-14 09:20
+
+- continued work on the html template for the main page
