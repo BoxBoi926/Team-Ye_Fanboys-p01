@@ -21,7 +21,8 @@ def landingpage():
         currentUser = currentUserResponse.data
 
         if currentUser: #Checks if user is logged in
-            return "Hi, " + currentUser["displayName"] + "!"
+            return render_template('mainPage.html') ##user = session["username"])
+
 
     return render_template( 'login.html' ) # Render the login template
 
