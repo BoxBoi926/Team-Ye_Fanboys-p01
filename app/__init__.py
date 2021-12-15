@@ -7,6 +7,7 @@ from os import urandom
 
 from utils.auth import AuthService
 from utils.db import *
+from apis import unsplash
 
 app = Flask(__name__)
 
@@ -21,7 +22,8 @@ def landingpage():
         currentUser = currentUserResponse.data
 
         if currentUser: #Checks if user is logged in
-            return "Hi, " + currentUser["displayName"] + "!"
+            imageInfo = unsplash.getUnsplashPhoto()
+            return render_template('mainPage.html', bgImg = imageInfo['urls']['raw'])
 
     return render_template( 'login.html' ) # Render the login template
 
