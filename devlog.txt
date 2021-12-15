@@ -54,3 +54,8 @@ andyL -- 2021-12-13 15:25
 - added 411 on unsplash api so that I can implement the api
 - implemented the unsplash api
 - removed code references from testing the other apis to see if they worked
+
+davidC -- 2021-12-15 09:17
+
+- added bootstrap onto the login page, will be implementing on all pages from now on
+- debating whether login page is needed..?
