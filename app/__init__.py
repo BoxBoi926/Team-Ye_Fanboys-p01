@@ -22,11 +22,11 @@ def landingpage():
         currentUser = currentUserResponse.data
 
         if currentUser: #Checks if user is logged in
-            # imageInfo = unsplash.getUnsplashPhoto()
+            imageInfo = unsplash.getUnsplashPhoto()
             weatherInfo = weather.getWeatherForCurrentLocation()
             yeQuote = kanyeQuote.getQuote()
             newsArticles = news.getNews()
-            # return render_template('mainPage.html', bgImg = imageInfo['urls']['raw'], weatherNow = weatherInfo)
+            return render_template('mainPage.html', bgImg = imageInfo['urls']['raw'], weatherNow = weatherInfo, news = newsArticles, kanyeQuote = yeQuote)
             return render_template('mainPage.html', weatherNow = weatherInfo, news = newsArticles, kanyeQuote = yeQuote)
 
     return render_template( 'login.html' ) # Render the login template
