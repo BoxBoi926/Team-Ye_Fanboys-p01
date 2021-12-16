@@ -12,27 +12,24 @@ P01: Main Webpage
     <h1>Welcome!</h1>
     <br>
     Date:
-    <style>
-      body {
-        background-image: url('{{ bgImg }}');
-        background-size: 100vh;
-      }
-    </style>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   </head>
 
   <br>
   <br>
-  <body>
+  <body class="bg-image" style ="background-image: url('{{ bgImg }}'); height: 100vh; width: 100vw">
     <div class="shadow p-3 mb-5 bg-white rounded">
     <h2>Weather at {{ weatherNow['location']['name'] }}, {{ weatherNow['location']['region'] }}</h2>
     <img src="{{ weatherNow['current']['condition']['icon'] }}">
     <h3>{{ weatherNow['current']['condition']['text'] }}</h3>
+    Current temp: {{ weatherNow['current']['temp_f'] }} °F
+    <br>
+    RealFeel: {{ weatherNow['current']['feelslike_f']}} °F
     </div>
     To do
     <div class="shadow p-3 mb-5 bg-white rounded">
       <h2>News</h2>
-      <a href="{{ news[0]['url'] }}"><img src="{{ news[0]['image'] }}">
+      <a href="{{ news[0]['url'] }}"><img src="{{ news[0]['image'] }}" style="width: 100px">
       <h3>{{ news[0]['title'] }}</a></h3>
     </div>
     Social Media
