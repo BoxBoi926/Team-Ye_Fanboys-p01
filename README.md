@@ -12,4 +12,20 @@ Our website is a dashboard that centralizes all of the things that a user would 
 
 - Shadman Rakib: Login and authentication
 
-## Launch Code
+## Running the Code
+
+### Install Code
+
+```shell
+$ git clone https://github.com/markzhu926/Team-Ye_Fanboys-p01.git
+$ cd /path/to/Team-Ye_Fanboys-p01
+$ pip install -r requirements.txt
+```
+
+### Launch Code
+
+```shell
+$ cd /path/to/Team-Ye_Fanboys-p01
+$ cd app
+$ python __init__.py
+```
