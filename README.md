@@ -27,5 +27,5 @@ $ pip install -r requirements.txt
 ```shell
 $ cd /path/to/Team-Ye_Fanboys-p01
 $ cd app
-$ python __init__.py
+$ python3 __init__.py
 ```

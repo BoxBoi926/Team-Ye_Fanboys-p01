@@ -66,8 +66,22 @@ andyL -- 2021-12-15 09:26
 - tried to ensure that background photo would resize to fit site, but this is broken
 - started to implement weather api into the site
 
+shadmanR -- 2021-12-15 19:39
+
+- Added news api to class knowledge base.
+
 andyL -- 2021-12-15 21:12
 
 - more working on implementing weather api into website
 - implemented kanye quotes into website
 - started implementing news api into website
+
+shadmanR -- 2021-12-15 19:39
+
+- Tweaked launch codes.
+- Helped David with styles.
+
+davidC -- 2021-12-16 09:17
+
+- changed html on login page
+- added font to login page, working on login buttons
