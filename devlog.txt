@@ -44,11 +44,11 @@ markZ -- 2021-12-14 09:20
 
 - continued work on the html template for the main page
 
-andyL -- 2021-12-13 09:26
+andyL -- 2021-12-14 09:26
 
-- added the kanye api and tried to troubleshoot a 503 error that kept occuring
+- added the kanye api and tried to troubleshoot a 503 error that kept occurring
 
-andyL -- 2021-12-13 15:25
+andyL -- 2021-12-14 15:25
 
 - fixed the issue where the kanye api failed to load (probably because the kanye api thought we were a bot based on the fact that no browser data was attached)
 - added 411 on unsplash api so that I can implement the api
@@ -59,3 +59,15 @@ davidC -- 2021-12-15 09:17
 
 - added bootstrap onto the login page, will be implementing on all pages from now on
 - debating whether login page is needed..?
+
+andyL -- 2021-12-15 09:26
+
+- got unsplash photo to render in background (however, this is disabled due to limited number of API calls per hour)
+- tried to ensure that background photo would resize to fit site, but this is broken
+- started to implement weather api into the site
+
+andyL -- 2021-12-15 21:12
+
+- more working on implementing weather api into website
+- implemented kanye quotes into website
+- started implementing news api into website
