@@ -1,4 +1,14 @@
-:root{}
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap');
 body{
+	align-items: center;
+	
 	text-align: center;
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
+.login{
+	padding:50px;
+	max-width: 50%;
+	border: 2px solid grey;
+	border-radius: 5px;
 }
