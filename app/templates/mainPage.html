@@ -9,7 +9,7 @@ P01: Main Webpage
 
 <html>
   <head>
-    Welcome!
+    <h1>Welcome!</h1>
     <br>
     Date:
     <style>
@@ -24,22 +24,21 @@ P01: Main Webpage
   <br>
   <br>
   <body>
-
     <div class="shadow p-3 mb-5 bg-white rounded">
     <h2>Weather in {{ weatherNow['location']['name'] }}, {{ weatherNow['location']['region'] }}</h2>
-    <br>
     <img src="{{ weatherNow['current']['condition']['icon'] }}">
-    <br>
     <h3>{{ weatherNow['current']['condition']['text'] }}</h3>
     </div>
-    <br>
     To do
     <br>
     News
     <br>
     Social Media
     <br>
-    Kanye Quote
+    <div class="shadow p-3 mb-5 bg-white rounded">
+    <h2>Kanye Quote</h2>
+    <h3>{{ kanyeQuote}}</h3>
+    </div>
     <br>
     Kanye Memes
     <br>

@@ -7,7 +7,7 @@ from os import urandom
 
 from utils.auth import AuthService
 from utils.db import *
-from apis import unsplash, weather
+from apis import unsplash, weather, kanyeQuote
 
 app = Flask(__name__)
 
@@ -24,8 +24,9 @@ def landingpage():
         if currentUser: #Checks if user is logged in
             # imageInfo = unsplash.getUnsplashPhoto()
             weatherInfo = weather.getWeatherForCurrentLocation()
+            yeQuote = kanyeQuote.getQuote()
             # return render_template('mainPage.html', bgImg = imageInfo['urls']['raw'], weatherNow = weatherInfo)
-            return render_template('mainPage.html', weatherNow = weatherInfo)
+            return render_template('mainPage.html', weatherNow = weatherInfo, kanyeQuote = yeQuote)
 
     return render_template( 'login.html' ) # Render the login template
 
