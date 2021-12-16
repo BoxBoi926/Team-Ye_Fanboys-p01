@@ -25,14 +25,16 @@ P01: Main Webpage
   <br>
   <body>
     <div class="shadow p-3 mb-5 bg-white rounded">
-    <h2>Weather in {{ weatherNow['location']['name'] }}, {{ weatherNow['location']['region'] }}</h2>
+    <h2>Weather at {{ weatherNow['location']['name'] }}, {{ weatherNow['location']['region'] }}</h2>
     <img src="{{ weatherNow['current']['condition']['icon'] }}">
     <h3>{{ weatherNow['current']['condition']['text'] }}</h3>
     </div>
     To do
-    <br>
-    News
-    <br>
+    <div class="shadow p-3 mb-5 bg-white rounded">
+      <h2>News</h2>
+      <a href="{{ news[0]['url'] }}"><img src="{{ news[0]['image'] }}">
+      <h3>{{ news[0]['title'] }}</a></h3>
+    </div>
     Social Media
     <br>
     <div class="shadow p-3 mb-5 bg-white rounded">
