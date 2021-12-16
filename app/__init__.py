@@ -35,7 +35,7 @@ def login():
     The value property contains data from both requests.args and requests.form.'''
 
     if request.method == "GET": #for when you refresh the website
-        return redirect('/')
+        return render_template( 'login.html' )
     else: #when you log in from /
         username = request.values['username']
         password = request.values['password']
