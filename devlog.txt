@@ -85,3 +85,7 @@ davidC -- 2021-12-16 09:17
 
 - changed html on login page
 - added font to login page, working on login buttons
+
+shadmanR -- 2021-12-17 09:26
+
+- Styled register
