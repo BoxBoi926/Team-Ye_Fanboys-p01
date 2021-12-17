@@ -8,42 +8,67 @@ P01: Main Webpage
 -->
 
 <html>
-  <head>
-    <h1>Welcome!</h1>
-    <br>
-    Date:
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-  </head>
 
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <h1>Welcome!</h1>
   <br>
-  <br>
-  <body class="bg-image" style ="background-image: url('{{ bgImg }}'); height: 100vh; width: 100vw">
-    <div class="shadow p-3 mb-5 bg-white rounded">
+  Date:
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous"/>
+</head>
+
+<br>
+<br>
+
+<body class="bg-image" style="background-image: url('{{ bgImg }}'); height: 100vh; width: 100vw">
+  <div class="shadow p-3 mb-5 bg-white rounded">
     <h2>Weather at {{ weatherNow['location']['name'] }}, {{ weatherNow['location']['region'] }}</h2>
     <img src="{{ weatherNow['current']['condition']['icon'] }}">
     <h3>{{ weatherNow['current']['condition']['text'] }}</h3>
     Current temp: {{ weatherNow['current']['temp_f'] }} °F
     <br>
     RealFeel: {{ weatherNow['current']['feelslike_f']}} °F
-    </div>
-    To do
-    <div class="shadow p-3 mb-5 bg-white rounded">
-      <h2>News</h2>
-      <a href="{{ news[0]['url'] }}"><img src="{{ news[0]['image'] }}" style="width: 100px">
-      <h3>{{ news[0]['title'] }}</a></h3>
-    </div>
-    Social Media
     <br>
-    <div class="shadow p-3 mb-5 bg-white rounded">
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#weatherForecast">
+      Launch demo modal
+    </button>
+  
+    <!-- Modal -->
+    <div class="modal fade" id="weatherForecast" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Forecast for {{ "mem" }}</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  To do
+  <div class="shadow p-3 mb-5 bg-white rounded">
+    <h2>News</h2>
+    <a href="{{ news[0]['url'] }}"><img src="{{ news[0]['image'] }}" style="width: 100px">
+      <h3>{{ news[0]['title'] }}
+    </a></h3>
+  </div>
+  Social Media
+  <br>
+  <div class="shadow p-3 mb-5 bg-white rounded">
     <h2>Kanye Quote</h2>
     <h3>{{ kanyeQuote}}</h3>
-    </div>
-    <br>
-    Kanye Memes
-    <br>
-    Any Other Widgets
-    <br>
-    Add new Widgets
   </div>
+  <br>
+  Kanye Memes
+  <br>
+  Any Other Widgets
+  <br>
+  Add new Widgets
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
 </body>
+
 </html>
