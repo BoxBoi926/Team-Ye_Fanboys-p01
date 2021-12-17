@@ -4,6 +4,7 @@ from flask import request           #facilitate form submission
 from flask import session           #facilitate user sessions
 from flask import redirect
 from os import urandom
+from datetime import date
 
 from utils.auth import AuthService
 from utils.db import *

@@ -7,7 +7,7 @@
     <link href ="../static/css/styles.css" rel ="stylesheet" type ="text/css">
   </head>
 
-  <body class="bg-light d-flex flex-column vw-100 vh-100 align-center justify-content-center">
+  <body class="bg-light d-flex flex-column vw-100 vh-100 align-items-center justify-content-center">
     <h1>
       Welcome to the signup page!
     </h1>
@@ -15,24 +15,26 @@
     <h3>
       Create your account below!
     </h3>
+      <form action="/signup" method="POST" class="bg-white p-5 mt-5 rounded-2 d-flex justify-content-stretch flex-column" style="width: 100%; max-width: 500px; grid-gap: 24px;">
+        <div class="d-flex flex-column align-items-left">
+          <label for="" class="text-left">Display Name:</label>
+          <input class="form-control" type="text" name="displayName">
+        </div>
+        <div class="">
+          <label for="">Username:</label>
+          <input  class="form-control" type="text" name="username">
+        </div>
+        <div class="">
+          <label for="">Password:</label>
+        <input  class="form-control" type="password" name="password">
+        </div>
+        <input class="btn btn-primary" type="submit" name="sub1" value="Register">
 
-    <div class="bg-white p-5 mt-5 rounded-2">
-      <form action="/signup" method="POST">
-        Display Name:
-        <input type="text" name="displayName">
-        <br>
-        Username:
-        <input type="text" name="username">
-        <br>
-        Password:
-        <input type="password" name="password">
-        <br>
-        <input type="submit" name="sub1" value="Register">
-        <br>
-        <a href="/login">Login</a>
-        <a href="/">Home</a>
+        <div class="d-flex justify-content-center" style="grid-gap: 12px;">
+          <a href="/login">Login</a>
+          <a href="/">Home</a>
+        </div>
       </form>
-    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   </body>
 
