@@ -4,6 +4,7 @@ from flask import request           #facilitate form submission
 from flask import session           #facilitate user sessions
 from flask import redirect
 from os import urandom
+from datetime import date
 
 from utils.auth import AuthService
 from utils.db import *
@@ -26,7 +27,7 @@ def landingpage():
             weatherInfo = weather.getWeatherForCurrentLocation()
             yeQuote = kanyeQuote.getQuote()
             newsArticles = news.getNews()
-            return render_template('mainPage.html', bgImg = imageInfo['urls']['raw'], weatherNow = weatherInfo, news = newsArticles, kanyeQuote = yeQuote)
+            return render_template('mainPage.html', date = date.today() , bgImg = imageInfo['urls']['raw'], weatherNow = weatherInfo, news = newsArticles, kanyeQuote = yeQuote)
             return render_template('mainPage.html', weatherNow = weatherInfo, news = newsArticles, kanyeQuote = yeQuote)
 
     return render_template( 'login.html' ) # Render the login template
