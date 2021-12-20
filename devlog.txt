@@ -89,3 +89,9 @@ davidC -- 2021-12-16 09:17
 shadmanR -- 2021-12-17 09:26
 
 - Styled register
+
+davidC -- 2021-12-20 09:21 
+
+-Styled login page to match register
+-Added error message for register page, added python to reflect changes
+-Added name into mainpage html, added python to reflect changes
