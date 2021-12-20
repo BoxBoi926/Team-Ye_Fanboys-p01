@@ -28,7 +28,7 @@ def landingpage():
             yeQuote = kanyeQuote.getQuote()
             newsArticles = news.getNews()
             # return render_template('mainPage.html', bgImg = imageInfo['urls']['raw'], weatherNow = weatherInfo, news = newsArticles, kanyeQuote = yeQuote)
-            return render_template('mainPage.html', weatherNow = weatherInfo, news = newsArticles, kanyeQuote = yeQuote)
+            return render_template('mainPage.html', weatherNow = weatherInfo, news = newsArticles, kanyeQuote = yeQuote, name = currentUser["displayName"])
 
     return render_template( 'login.html' ) # Render the login template
 
@@ -65,7 +65,7 @@ def register():
         if registerResponse.success:
             return redirect("/login") #After registering, brings you to login
         else:
-            return render_template('register.html')
+            return render_template('register.html', error='Username taken')
 
 
 @app.route("/logout")
