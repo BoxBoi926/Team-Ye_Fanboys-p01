@@ -95,3 +95,7 @@ davidC -- 2021-12-20 09:21
 -Styled login page to match register
 -Added error message for register page, added python to reflect changes
 -Added name into mainpage html, added python to reflect changes
+
+shadmanR -- 2021-12-20 09:26
+
+- Try catch for unsplash api
