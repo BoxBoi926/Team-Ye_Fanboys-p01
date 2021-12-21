@@ -22,6 +22,8 @@ P01: Main Webpage
 <br>
 
 <body class="bg-image" style="background-image: url('{{ bgImg }}'); background-position: center; background-size: cover; background-repeat: no-repeat; min-height: 100vh; width: 100vw">
+  <div class = "d-flex justify-content-center text-center">
+  
   <div class="shadow p-3 mb-5 bg-white rounded">
     <h2>Weather at {{ weatherNow['location']['name'] }}, {{ weatherNow['location']['region'] }}</h2>
     <img src="{{ weatherNow['current']['condition']['icon'] }}">
@@ -58,10 +60,20 @@ P01: Main Webpage
   </div>
   Social Media
   <br>
+
+
+
+
   <div class="shadow p-3 mb-5 bg-white rounded">
     <h2>Kanye Quote</h2>
     <h3>{{ kanyeQuote}}</h3>
   </div>
+
+</div>
+
+
+
+
   <br>
   Kanye Memes
   <br>
