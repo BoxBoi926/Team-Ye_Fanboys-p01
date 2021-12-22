@@ -31,7 +31,7 @@ P01: Main Webpage
     RealFeel: {{ weatherNow['current']['feelslike_f']}} °F
     <br>
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#weatherForecast">
-      Launch demo modal
+      Weather Forecast
     </button>
   
     <!-- Modal -->
@@ -39,11 +39,24 @@ P01: Main Webpage
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Forecast for {{ "mem" }}</h5>
+            <h5 class="modal-title" id="exampleModalLabel">Forecast for {{ weatherNow['location']['name'] }}, {{ weatherNow['location']['region'] }}</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            
+            {% for forecast in weatherNow['forecast']['forecastday'] %}
+            <div class="scrollmenu">
+             {% for hour in forecast['hour'] %}
+                {% if time < hour['time_epoch'] %}
+                  <img src="{{ hour['condition']['icon'] }}">
+                  <h3>{{ hour['time'] }}</h3>
+                  <h4>{{ hour['condition']['text'] }}</h3>
+                  <br>
+                  {{ hour['temp_f'] }} °F
+                  <br>
+                {% endif %}
+              {% endfor %}
+            </div>
+            {% endfor %}
           </div>
         </div>
       </div>

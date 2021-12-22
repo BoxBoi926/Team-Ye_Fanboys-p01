@@ -9,6 +9,7 @@ from datetime import date
 from utils.auth import AuthService
 from utils.db import *
 from apis import unsplash, weather, kanyeQuote, news
+import time
 
 app = Flask(__name__)
 
@@ -24,11 +25,11 @@ def landingpage():
 
         if currentUser: #Checks if user is logged in
             imageUrl = unsplash.getUnsplashPhoto()
-            weatherInfo = weather.getWeatherForCurrentLocation()
+            weatherNow = weather.getWeatherForCurrentLocation()
             yeQuote = kanyeQuote.getQuote()
             newsArticles = news.getNews()
             # return render_template('mainPage.html', bgImg = imageInfo['urls']['raw'], weatherNow = weatherInfo, news = newsArticles, kanyeQuote = yeQuote)
-            return render_template('mainPage.html',  bgImg = imageUrl, weatherNow = weatherInfo, news = newsArticles, kanyeQuote = yeQuote, name = currentUser["displayName"])
+            return render_template('mainPage.html', bgImg = imageUrl, weatherNow = weatherNow, news = newsArticles, kanyeQuote = yeQuote, name = currentUser["displayName"], time=time.time())
 
     return render_template( 'login.html' ) # Render the login template
 
