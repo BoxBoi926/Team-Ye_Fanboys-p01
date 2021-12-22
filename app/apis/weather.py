@@ -1,6 +1,9 @@
 import urllib.parse as urlparse, urllib.request as urlrequest
 import json
-from apis import getIpAddress
+try:
+    from apis import getIpAddress
+except:
+    import getIpAddress
 
 apiKey = "a591cc0b3ce141668cc142051211012"
 
