@@ -36,14 +36,15 @@ P01: Main Webpage
   <div class = "d-flex justify-content-center text-center">
   
   <div class="shadow p-3 mb-5 bg-white rounded">
-    <h2>Weather at {{ weatherNow['location']['name'] }}, {{ weatherNow['location']['region'] }}</h2>
+    <h2>Current Weather at {{ weatherNow['location']['name'] }}, {{ weatherNow['location']['region'] }}</h2>
     <img src="{{ weatherNow['current']['condition']['icon'] }}">
     <h3>{{ weatherNow['current']['condition']['text'] }}</h3>
     Current temp: {{ weatherNow['current']['temp_f'] }} °F
+    <br>
     RealFeel: {{ weatherNow['current']['feelslike_f']}} °F
     <br>
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#weatherForecast">
-      Weather Forecast
+      See Weather Forecast
     </button>
   
     <!-- Modal -->
@@ -51,29 +52,30 @@ P01: Main Webpage
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Forecast for {{ weatherNow['location']['name'] }}, {{ weatherNow['location']['region'] }}</h5>
+            <h5 class="modal-title" id="exampleModalLabel">Weather Forecast for {{ weatherNow['location']['name'] }}, {{ weatherNow['location']['region'] }}</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
             {% for forecast in weatherNow['forecast']['forecastday'] %}
               {% if forecast['hour']|length > 1 %}
+              <h2>{{ forecast['date'] }}</h2>
                 <div class="container testimonial-group">
                   <div class="row text-center">
                   {% for hour in forecast['hour'] %}
                     {% if time < hour['time_epoch'] %}
                     <div class="col-xs-4">
                       <img src="{{ hour['condition']['icon'] }}">
-                      <h3>{{ hour['time'] }}</h3>
+                      <h3>{{ hour['time'].split(' ')[1] }}</h3>
                       <h4>{{ hour['condition']['text'] }}</h4>
                       <br>
                       {{ hour['temp_f'] }} °F
-                      <br>
                     </div>
                     {% endif %}
                   {% endfor %}
                 {% endif %}
               </div>
             </div>
+            <hr>
             {% endfor %}
           </div>
         </div>
