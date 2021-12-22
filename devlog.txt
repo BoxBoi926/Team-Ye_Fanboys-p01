@@ -99,3 +99,8 @@ davidC -- 2021-12-20 09:21
 shadmanR -- 2021-12-20 09:26
 
 - Try catch for unsplash api
+
+shadmanR -- 2021-12-21 09:26
+
+- fixed bg image styles
+- added fake weather data if the weather api fails
