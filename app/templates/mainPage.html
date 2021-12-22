@@ -56,20 +56,22 @@ P01: Main Webpage
           </div>
           <div class="modal-body">
             {% for forecast in weatherNow['forecast']['forecastday'] %}
-            <div class="container testimonial-group">
-              <div class="row text-center">
-              {% for hour in forecast['hour'] %}
-                  {% if time < hour['time_epoch'] %}
-                  <div class="col-xs-4">
-                    <img src="{{ hour['condition']['icon'] }}">
-                    <h3>{{ hour['time'] }}</h3>
-                    <h4>{{ hour['condition']['text'] }}</h4>
-                    <br>
-                    {{ hour['temp_f'] }} °F
-                    <br>
-                  </div>
-                  {% endif %}
-                {% endfor %}
+              {% if forecast['hour']|length > 1 %}
+                <div class="container testimonial-group">
+                  <div class="row text-center">
+                  {% for hour in forecast['hour'] %}
+                    {% if time < hour['time_epoch'] %}
+                    <div class="col-xs-4">
+                      <img src="{{ hour['condition']['icon'] }}">
+                      <h3>{{ hour['time'] }}</h3>
+                      <h4>{{ hour['condition']['text'] }}</h4>
+                      <br>
+                      {{ hour['temp_f'] }} °F
+                      <br>
+                    </div>
+                    {% endif %}
+                  {% endfor %}
+                {% endif %}
               </div>
             </div>
             {% endfor %}

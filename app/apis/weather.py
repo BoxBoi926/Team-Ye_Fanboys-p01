@@ -12,7 +12,7 @@ ip = getIpAddress.getIp()
 def getWeatherForCurrentLocation():
     try:
         url = "http://api.weatherapi.com/v1/forecast.json"
-        params = {'key': apiKey, 'q': ip}
+        params = {'key': apiKey, 'q': ip, 'days': 10}
 
         urlParts = list(urlparse.urlparse(url))
         query = dict(urlparse.parse_qsl(urlParts[4]))
