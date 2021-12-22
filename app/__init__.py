@@ -28,7 +28,7 @@ def landingpage():
             yeQuote = kanyeQuote.getQuote()
             newsArticles = news.getNews()
             # return render_template('mainPage.html', bgImg = imageInfo['urls']['raw'], weatherNow = weatherInfo, news = newsArticles, kanyeQuote = yeQuote)
-            return render_template('mainPage.html',  bgImg = imageUrl, weatherNow = weatherInfo, news = newsArticles, kanyeQuote = yeQuote, name = currentUser["displayName"])
+            return render_template('shady.html',  bgImg = imageUrl, weatherNow = weatherInfo, news = newsArticles, kanyeQuote = yeQuote, name = currentUser["displayName"])
 
     return render_template( 'login.html' ) # Render the login template
 
