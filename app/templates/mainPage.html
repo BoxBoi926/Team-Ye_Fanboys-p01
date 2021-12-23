@@ -126,6 +126,12 @@ P01: Main Webpage
     <div class="shadow p-3 mb-5 bg-white rounded">
       Memes
 
+      <a href="{{ memes[0]['url'] }}">
+        <img src="{{memes[0]['preview'][-1]}}" style="width: 350px">
+        <br>
+        <h3>{{ meme[0]['title'] }}</h3>
+      </a>
+
       <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#moreMemes">
         See More Memes
       </button>
