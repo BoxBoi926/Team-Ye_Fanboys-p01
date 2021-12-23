@@ -35,97 +35,102 @@ P01: Main Webpage
 <body class="bg-image" style="background-image: url('{{ bgImg }}'); background-position: center; background-size: cover; background-repeat: no-repeat; min-height: 100vh; width: 100vw">
   <div class = "d-flex justify-content-center text-center">
   
-  <div class="shadow p-3 mb-5 bg-white rounded">
-    <h2>Current Weather at {{ weatherNow['location']['name'] }}, {{ weatherNow['location']['region'] }}</h2>
-    <img src="{{ weatherNow['current']['condition']['icon'] }}">
-    <h3>{{ weatherNow['current']['condition']['text'] }}</h3>
-    Current temp: {{ weatherNow['current']['temp_f'] }} °F
-    <br>
-    RealFeel: {{ weatherNow['current']['feelslike_f']}} °F
-    <br>
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#weatherForecast">
-      See Weather Forecast
-    </button>
-  
-    <!-- Modal -->
-    <div class="modal fade" id="weatherForecast" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Weather Forecast for {{ weatherNow['location']['name'] }}, {{ weatherNow['location']['region'] }}</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            {% for forecast in weatherNow['forecast']['forecastday'] %}
-              {% if forecast['hour']|length > 1 %}
-              <h2>{{ forecast['date'] }}</h2>
-                <div class="container testimonial-group">
-                  <div class="row text-center">
-                  {% for hour in forecast['hour'] %}
-                    {% if time < hour['time_epoch'] %}
-                    <div class="col-xs-4">
-                      <img src="{{ hour['condition']['icon'] }}">
-                      <h3>{{ hour['time'].split(' ')[1] }}</h3>
-                      <h4>{{ hour['condition']['text'] }}</h4>
-                      <br>
-                      {{ hour['temp_f'] }} °F
-                    </div>
-                    {% endif %}
-                  {% endfor %}
-                {% endif %}
-              </div>
+    <div class="shadow p-3 mb-5 bg-white rounded">
+      <h2>Current Weather at {{ weatherNow['location']['name'] }}, {{ weatherNow['location']['region'] }}</h2>
+      <img src="{{ weatherNow['current']['condition']['icon'] }}">
+      <h3>{{ weatherNow['current']['condition']['text'] }}</h3>
+      Current temp: {{ weatherNow['current']['temp_f'] }} °F
+      <br>
+      RealFeel: {{ weatherNow['current']['feelslike_f']}} °F
+      <br>
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#weatherForecast">
+        See Weather Forecast
+      </button>
+    
+      <!-- Modal -->
+      <div class="modal fade" id="weatherForecast" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Weather Forecast for {{ weatherNow['location']['name'] }}, {{ weatherNow['location']['region'] }}</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <hr>
-            {% endfor %}
+            <div class="modal-body">
+              {% for forecast in weatherNow['forecast']['forecastday'] %}
+                {% if forecast['hour']|length > 1 %}
+                <h2>{{ forecast['date'] }}</h2>
+                  <div class="container testimonial-group">
+                    <div class="row text-center">
+                    {% for hour in forecast['hour'] %}
+                      {% if time < hour['time_epoch'] %}
+                      <div class="col-xs-4">
+                        <img src="{{ hour['condition']['icon'] }}">
+                        <h3>{{ hour['time'].split(' ')[1] }}</h3>
+                        <h4>{{ hour['condition']['text'] }}</h4>
+                        <br>
+                        {{ hour['temp_f'] }} °F
+                      </div>
+                      {% endif %}
+                    {% endfor %}
+                  {% endif %}
+                </div>
+              </div>
+              <hr>
+              {% endfor %}
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
-  To do
-  <div class="shadow p-3 mb-5 bg-white rounded" style="width: 400px">
-    <h2>News</h2>
-    {% for i in range(5) %}
-      <a href="{{ news[i]['url'] }}">
-        <img src="{{ news[i]['urlToImage'] }}" style="width: 350px">
-        <h3>{{ news[i]['title'] }}</h3>
-      </a>
-    {% endfor %}
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#moreNews">
-      See More News Reports
-    </button>
+    To do
+    <div class="shadow p-3 mb-5 bg-white rounded" style="width: 400px">
+      <h2>News</h2>
+      {% for i in range(5) %}
+        <a href="{{ news[i]['url'] }}">
+          <img src="{{ news[i]['urlToImage'] }}" style="width: 350px">
+          <h3>{{ news[i]['title'] }}</h3>
+        </a>
+      {% endfor %}
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#moreNews">
+        See More News Reports
+      </button>
 
-    <div class="modal fade" id="moreNews" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Latest News</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            {% for new in news %}
-              <a href="{{ new['url'] }}">
-                <img src="{{ new['urlToImage'] }}" style="width: 350px">
-                <h3>{{ new['title'] }}</h3>
-              </a>
-            {% endfor %}
+      <div class="modal fade" id="moreNews" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Latest News</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              {% for new in news %}
+                <a href="{{ new['url'] }}">
+                  <img src="{{ new['urlToImage'] }}" style="width: 350px">
+                  <h3>{{ new['title'] }}</h3>
+                </a>
+              {% endfor %}
+            </div>
           </div>
         </div>
-      </div>
-    </div>      
-  </div>
-  Social Media
-  <br>
+      </div>      
+    </div>
+    Social Media
+    <br>
 
-  <div class="shadow p-3 mb-5 bg-white rounded">
-    <h2>Kanye Quote</h2>
-    <h3>{{ kanyeQuote}}</h3>
-  </div>
+    <div class="shadow p-3 mb-5 bg-white rounded" style="width=200px">
+      <h2>Kanye Quote</h2>
+      <h3>{{ kanyeQuote }}</h3>
+    </div>
 
-</div>
+    <div class="shadow p-3 mb-5 bg-white rounded">
+      {% for meme in memes|selectattr("nsfw", "equalto", False)|list %}
+        {{ meme }}
+      {% endfor %}
+    </div>
+
+  </div>
   <br>
-  Kanye Memes
   <br>
   Any Other Widgets
   <br>

@@ -8,7 +8,7 @@ from datetime import date
 
 from utils.auth import AuthService
 from utils.db import *
-from apis import unsplash, weather, kanyeQuote, news
+from apis import unsplash, weather, kanyeQuote, news, meme
 import time
 
 app = Flask(__name__)
@@ -28,8 +28,9 @@ def landingpage():
             weatherNow = weather.getWeatherForCurrentLocation()
             yeQuote = kanyeQuote.getQuote()
             newsArticles = news.getNewsPrime()
-            # return render_template('mainPage.html', bgImg = imageInfo['urls']['raw'], weatherNow = weatherInfo, news = newsArticles, kanyeQuote = yeQuote)
-            return render_template('shady.html', bgImg = imageUrl, weatherNow = weatherNow, news = newsArticles, kanyeQuote = yeQuote, name = currentUser["displayName"], time=time.time())
+            memes = meme.getMeme()
+            return render_template('mainPage.html', bgImg = imageUrl, weatherNow = weatherNow, news = newsArticles, kanyeQuote = yeQuote, name = currentUser["displayName"], time=time.time(), memes=memes)
+            # return render_template('shady.html', bgImg = imageUrl, weatherNow = weatherNow, news = newsArticles, kanyeQuote = yeQuote, name = currentUser["displayName"], time=time.time())
 
     return render_template( 'login.html' ) # Render the login template
 
