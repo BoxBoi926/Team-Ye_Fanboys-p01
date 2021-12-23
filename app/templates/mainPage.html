@@ -82,18 +82,41 @@ P01: Main Webpage
       </div>
     </div>
   </div>
+
   To do
   <div class="shadow p-3 mb-5 bg-white rounded">
     <h2>News</h2>
-    <a href="{{ news[0]['url'] }}"><img src="{{ news[0]['image'] }}" style="width: 100px">
-      <h3>{{ news[0]['title'] }}
-    </a></h3>
+    {% for i in range(5) %}
+      <a href="{{ news[i]['url'] }}">
+        <img src="{{ news[i]['image'] }}" style="width: 100px">
+        <h3>{{ news[i]['title'] }}</h3>
+      </a>
+    {% endfor %}
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#moreNews">
+      See More News Reports
+    </button>
+
+    <div class="modal fade" id="moreNews" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Latest News</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            {% for new in news %}
+              <a href="{{ new['url'] }}">
+                <img src="{{ new['image'] }}" style="width: 100px">
+                <h3>{{ new['title'] }}</h3>
+              </a>
+              {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>      
   </div>
   Social Media
   <br>
-
-
-
 
   <div class="shadow p-3 mb-5 bg-white rounded">
     <h2>Kanye Quote</h2>
@@ -101,10 +124,6 @@ P01: Main Webpage
   </div>
 
 </div>
-
-
-
-
   <br>
   Kanye Memes
   <br>
