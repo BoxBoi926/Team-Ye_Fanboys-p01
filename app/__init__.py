@@ -27,7 +27,7 @@ def landingpage():
             imageUrl = unsplash.getUnsplashPhoto()
             weatherNow = weather.getWeatherForCurrentLocation()
             yeQuote = kanyeQuote.getQuote()
-            newsArticles = news.getNews()
+            newsArticles = news.getNewsPrime()
             # return render_template('mainPage.html', bgImg = imageInfo['urls']['raw'], weatherNow = weatherInfo, news = newsArticles, kanyeQuote = yeQuote)
             return render_template('mainPage.html', bgImg = imageUrl, weatherNow = weatherNow, news = newsArticles, kanyeQuote = yeQuote, name = currentUser["displayName"], time=time.time())
 

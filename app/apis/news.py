@@ -1,25 +1,14 @@
 import urllib.request as urlrequest
 import json
 
-apiKey = "ZWgYdADsBPmpURWcbpTvGO4P8bsGtQMoriq9beSZTzYrADOE"
-
-def getNews():
-    try:
-        url = 'https://api.currentsapi.services/v1/latest-news?country=US&apiKey='+apiKey
-        siteData = urlrequest.urlopen(url)
-
-        return json.load(siteData)['news']
-    except Exception as issue:
-        print("Error encountered while loading the news info.")
-        print(issue)
-        return {}
+apiKey = "fb21856f1014477781b750989ad84d99"
 
 def getNewsPrime():
     try:
         url = 'https://newsapi.org/v2/top-headlines?country=us&apiKey='+apiKey
         siteData = urlrequest.urlopen(url)
 
-        return json.load(siteData)['news']
+        return json.load(siteData)['articles']
     except Exception as issue:
         print("Error encountered while loading the news info.")
         print(issue)
