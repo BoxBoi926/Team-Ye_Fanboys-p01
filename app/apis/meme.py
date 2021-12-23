@@ -7,7 +7,7 @@ def getMeme(returnNum: int = 10, resource: str = "kanye"):
         siteData = urlrequest.urlopen(url)
 
         results = json.load(siteData)['memes']
-        results = [result for result in results if result['nsfw']]
+        results = [result for result in results if not result['nsfw']]
 
         return results
     except Exception as issue:

@@ -86,7 +86,7 @@ P01: Main Webpage
     To do
     <div class="shadow p-3 mb-5 bg-white rounded" style="width: 400px">
       <h2>News</h2>
-      {% for i in range(5) %}
+      {% for i in range(2) %}
         <a href="{{ news[i]['url'] }}">
           <img src="{{ news[i]['urlToImage'] }}" style="width: 350px">
           <h3>{{ news[i]['title'] }}</h3>
@@ -113,20 +113,43 @@ P01: Main Webpage
             </div>
           </div>
         </div>
-      </div>      
+      </div>
     </div>
     Social Media
     <br>
 
-    <div class="shadow p-3 mb-5 bg-white rounded" style="width=200px">
+    <div class="shadow p-3 mb-5 bg-white rounded" style="width: 200px">
       <h2>Kanye Quote</h2>
       <h3>{{ kanyeQuote }}</h3>
     </div>
 
     <div class="shadow p-3 mb-5 bg-white rounded">
-      {% for meme in memes %}
-        {{ meme }}
-      {% endfor %}
+      Memes
+
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#moreMemes">
+        See More Memes
+      </button>
+
+      <div class="modal fade" id="moreMemes" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">More Memes!</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              {% for meme in memes %}
+                <a href="{{ meme['url'] }}">
+                  <img src="{{meme['preview'][-1]}}" style="width: 350px">
+                  <br>
+                  <h3>{{ meme['title'] }}</h3>
+                </a>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+      
     </div>
 
   </div>
