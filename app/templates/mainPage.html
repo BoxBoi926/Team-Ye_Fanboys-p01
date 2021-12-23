@@ -124,7 +124,7 @@ P01: Main Webpage
     </div>
 
     <div class="shadow p-3 mb-5 bg-white rounded">
-      {% for meme in memes|selectattr("nsfw", "equalto", False)|list %}
+      {% for meme in memes %}
         {{ meme }}
       {% endfor %}
     </div>
