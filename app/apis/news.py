@@ -13,3 +13,14 @@ def getNews():
         print("Error encountered while loading the news info.")
         print(issue)
         return {}
+
+def getNewsPrime():
+    try:
+        url = 'https://newsapi.org/v2/top-headlines?country=us&apiKey='+apiKey
+        siteData = urlrequest.urlopen(url)
+
+        return json.load(siteData)['news']
+    except Exception as issue:
+        print("Error encountered while loading the news info.")
+        print(issue)
+        return {}
