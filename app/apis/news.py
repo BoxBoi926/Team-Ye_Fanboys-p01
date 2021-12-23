@@ -12,4 +12,4 @@ def getNewsPrime():
     except Exception as issue:
         print("Error encountered while loading the news info.")
         print(issue)
-        return {}
+        return []

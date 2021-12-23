@@ -10,6 +10,4 @@ def getMeme(returnNum: int = 10, resource: str = "kanye"):
     except Exception as issue:
         print("Error encountered while loading memes.")
         print(issue)
-        return {}
-
-print(getMeme())
+        return []
