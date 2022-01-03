@@ -13,6 +13,14 @@ def initializeUsersTable():
     displayName TEXT,
     password TEXT,
     UNIQUE (username))''')
+    c.execute('''CREATE TABLE IF NOT EXISTS reminders(
+    ID INTEGER PRIMARY KEY,
+    username TEXT,
+    reminderDesc TEXT,
+    createDate TEXT,
+    completedDate TEXT,
+    isCompleted INTEGER
+    )''')
 
 def initializeDatabase():
     initializeUsersTable()

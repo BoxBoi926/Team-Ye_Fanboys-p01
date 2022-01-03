@@ -129,7 +129,7 @@ P01: Main Webpage
       <a href="{{ memes[0]['url'] }}">
         <img src="{{memes[0]['preview'][-1]}}" style="width: 350px">
         <br>
-        <h3>{{ meme[0]['title'] }}</h3>
+        <h3>{{ memes[0]['title'] }}</h3>
       </a>
 
       <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#moreMemes">
@@ -156,6 +156,37 @@ P01: Main Webpage
         </div>
       </div>
       
+    </div>
+
+    <div class="shadow p-3 mb-5 bg-white rounded">
+      
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addReminder">
+        Add New Reminder
+      </button>
+
+      <div class="modal fade" id="addReminder" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Add New Reminder</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form action="/" method="POST">
+                <div class="">
+                  <label for="">Reminder:</label>
+                  <input class="form-control" type="text" name="reminderText">
+                </div>
+                <div class="">
+                  <label for="">Due Date:</label>
+                <input class="form-control" type="date" name="dueDate">
+                </div>
+                <input class="btn btn-primary" type="submit" name="sub1" value="Login">
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
   </div>
