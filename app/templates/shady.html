@@ -27,8 +27,54 @@ P01: Main Webpage
       <div class="text-white fs-5 pt-2">"{{kanyeQuote}}"</div>
       <div class="text-white fs-5 fst-italic">- Kanye</div>
     </div>
+
+    <button type="button" data-bs-toggle="modal" data-bs-target="#weatherForecast" class="btn btn-unstyled position-absolute p-4 text-white" style="top: 0; right: 0;">
+      <div>{{ weatherNow['location']['name'] }}, {{ weatherNow['location']['region'] }}</div>
+      <div class="d-flex flex-row align-items-center justify-content-end">
+        <img src="{{ weatherNow['current']['condition']['icon'] }}">
+        <div class="fs-4">{{ weatherNow['current']['temp_f'] }} °F</div>
+      </div>
+    </button>
   </div>
   
+  <!-- Modal -->
+  <div class="modal fade" id="weatherForecast" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Weather Forecast for {{ weatherNow['location']['name'] }}, {{ weatherNow['location']['region'] }}</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          {% for forecast in weatherNow['forecast']['forecastday'] %}
+            {% if forecast['hour']|length > 1 %}
+            <h2 class="py-2">{{ forecast['date'] }}</h2>
+              <div class="d-flex testimonial-group">
+                <div class="row text-center">
+                {% for hour in forecast['hour'] %}
+                  {% if time < hour['time_epoch'] %}
+                  <div class="col-xs-4 py-4">
+                    <h3>{{ hour['time'].split(' ')[1] }}</h3>
+                    <div class="d-flex flex-row align-items-center justify-content-center">
+                      <img src="{{ hour['condition']['icon'] }}">
+                      <div class="fs-4">{{ hour['temp_f'] }} °F</div>
+                    </div>
+                    <div>{{ hour['condition']['text'] }}</div>
+                  </div>
+                  {% endif %}
+                {% endfor %}
+              {% endif %}
+            </div>
+          </div>
+          <hr>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
   <script src="/static/js/main.js"></script>
 </body>
