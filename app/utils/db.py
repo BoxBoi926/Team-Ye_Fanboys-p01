@@ -17,8 +17,7 @@ def initializeUsersTable():
     ID INTEGER PRIMARY KEY,
     username TEXT,
     reminderDesc TEXT,
-    createDate TEXT,
-    completedDate TEXT,
+    dueDate TEXT,
     isCompleted INTEGER
     )''')
 
@@ -43,5 +42,13 @@ def getUserByUsername(username):
         res = {"id": data[0], "username": data[1], "displayName": data[2], "password": data[3],}
 
         return Response(True, res, "")
+    except Exception as err:
+        return Response(False, None, err)
+
+def addReminder(username, reminderText, dueDate):
+    try:
+        c.execute('INSERT INTO reminders (username, reminderDesc, dueDate, isCompleted) VALUES(?, ?, ?, ?)', (username, reminderText, dueDate, 0))
+        db.commit()
+        return Response(True, None, "")
     except Exception as err:
         return Response(False, None, err)
