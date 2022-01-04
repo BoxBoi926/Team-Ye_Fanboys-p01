@@ -15,7 +15,7 @@ app = Flask(__name__)
 
 auth = AuthService()
 
-@app.route("/")
+@app.route("/", methods=['GET', 'POST'])
 def landingpage():
     '''If user is logged in, then returns the home page. Otherwise, render login page.'''
     currentUserResponse = auth.currentUser()
@@ -24,6 +24,10 @@ def landingpage():
         currentUser = currentUserResponse.data
 
         if currentUser: #Checks if user is logged in
+            if request.method == "POST":
+                print(currentUserResponse.data['username'])
+                print(request.values['reminderText'])
+                print(request.values['dueDate'])
             imageUrl = unsplash.getUnsplashPhoto()
             weatherNow = weather.getWeatherForCurrentLocation()
             yeQuote = kanyeQuote.getQuote()
