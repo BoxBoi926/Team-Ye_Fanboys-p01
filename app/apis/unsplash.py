@@ -5,6 +5,7 @@ from flask import url_for
 apiKey = 'q61EMMmSkbauKb5IHx-wFYIb6hct5J2-2t5qBdxCMdo'
 
 def getUnsplashPhoto():
+    '''Grabs a random image from Unsplash.'''
     try:
         url = "https://api.unsplash.com/photos/random?client_id="+apiKey
 

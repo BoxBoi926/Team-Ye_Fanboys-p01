@@ -3,7 +3,8 @@ import json
 
 apiKey = "fb21856f1014477781b750989ad84d99"
 
-def getNewsPrime():
+def getNews():
+    '''Grabs news from the news api.'''
     try:
         url = 'https://newsapi.org/v2/top-headlines?country=us&apiKey='+apiKey
         siteData = urlrequest.urlopen(url)

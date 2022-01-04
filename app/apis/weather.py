@@ -10,6 +10,7 @@ apiKey = "a591cc0b3ce141668cc142051211012"
 ip = getIpAddress.getIp()
 
 def getWeatherForCurrentLocation():
+    '''Grabs weather info for the current location.'''
     try:
         url = "http://api.weatherapi.com/v1/forecast.json"
         params = {'key': apiKey, 'q': ip, 'days': 10}

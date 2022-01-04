@@ -2,6 +2,7 @@ import urllib.request as urlrequest
 import json
 
 def getQuote():
+    '''Grabs a random Kanye quote from a Kanye as a Service site.'''
     try:
         url = 'https://api.kanye.rest'
 

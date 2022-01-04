@@ -29,7 +29,7 @@ def landingpage():
             imageUrl = unsplash.getUnsplashPhoto()
             weatherNow = weather.getWeatherForCurrentLocation()
             yeQuote = kanyeQuote.getQuote()
-            newsArticles = news.getNewsPrime()
+            newsArticles = news.getNews()
             memes = meme.getMeme()
             # return render_template('mainPage.html', bgImg = imageUrl, weatherNow = weatherNow, news = newsArticles, kanyeQuote = yeQuote, name = currentUser["displayName"], time=time.time(), memes=memes)
             return render_template('shady.html', bgImg = imageUrl, weatherNow = weatherNow, news = newsArticles, kanyeQuote = yeQuote, name = currentUser["displayName"], time=time.time())
