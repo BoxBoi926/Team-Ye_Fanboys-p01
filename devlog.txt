@@ -135,3 +135,26 @@ andyL -- 2021-12-23 09:26
 
 - showing the new news source in the dashboard
 - added the backend to the meme api
+
+shadmanR -- 2022-1-3 09:24
+
+- added new page shady.html instead of mainpage
+- cleaner styling
+- added weather api with clickable content
+- added time with javascript functions
+- added kanye west into background
+
+davidC -- 2022-1-3 09:26 
+
+- assisted Shadman with styling elements 
+- assisted Shadman with time function and kanye west styling, as well as background styling and general layout
+
+shadmanR -- 2022-1-4 09:28
+
+- Styled website further
+- implemented news api into new site
+
+davidC -- 2022-1-4 09:29
+
+- Assisted shadman with styling
+- added qof post with lo-fi background

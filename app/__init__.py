@@ -33,8 +33,8 @@ def landingpage():
             yeQuote = kanyeQuote.getQuote()
             newsArticles = news.getNewsPrime()
             memes = meme.getMeme()
-            return render_template('mainPage.html', bgImg = imageUrl, weatherNow = weatherNow, news = newsArticles, kanyeQuote = yeQuote, name = currentUser["displayName"], time=time.time(), memes=memes)
-            # return render_template('shady.html', bgImg = imageUrl, weatherNow = weatherNow, news = newsArticles, kanyeQuote = yeQuote, name = currentUser["displayName"], time=time.time())
+            # return render_template('mainPage.html', bgImg = imageUrl, weatherNow = weatherNow, news = newsArticles, kanyeQuote = yeQuote, name = currentUser["displayName"], time=time.time(), memes=memes)
+            return render_template('shady.html', bgImg = imageUrl, weatherNow = weatherNow, news = newsArticles, kanyeQuote = yeQuote, name = currentUser["displayName"], time=time.time())
 
     return render_template( 'login.html' ) # Render the login template
 
