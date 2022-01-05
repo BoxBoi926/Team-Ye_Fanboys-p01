@@ -55,3 +55,22 @@ def addReminder(username, reminderText, dueDate):
         return Response(True, None, "")
     except Exception as err:
         return Response(False, None, err)
+
+def loadReminderForUser(username):
+    '''Loads all reminders that has not been completed and is created by the current user.'''
+    try:
+        c.execute('SELECT * FROM reminders WHERE username = (?) AND isCompleted = 0', (username,))
+        data = c.fetchall()
+
+        return Response(True, data, "")
+    except Exception as err:
+        return Response(False, None, err)
+
+def completeReminderInDb(id):
+    '''Marks a reminder as complete.'''
+    try:
+        c.execute('UPDATE reminders SET isCompleted = 1 WHERE ID = ?', (id,))
+        db.commit()
+        return Response(True, None, "")
+    except Exception as err:
+        return Response(False, None, err)

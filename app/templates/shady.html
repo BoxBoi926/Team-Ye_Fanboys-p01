@@ -116,7 +116,15 @@ P01: Main Webpage
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          
+          {% for reminder in reminders %}
+            <a href="/completeReminder/{{ reminder[0] }}" style="color: gray; text-decoration: none;">
+              <h5>☐ {{ reminder[2] }}</h5> 
+              {% if reminder[3] %}
+                Due {{ reminder[3] }}
+              {% endif %}
+            </a>
+          {% endfor %}
+          <br>
           <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addReminder">
             Add New Reminder
           </button>

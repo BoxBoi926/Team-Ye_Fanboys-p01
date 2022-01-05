@@ -4,11 +4,10 @@ from flask import request           #facilitate form submission
 from flask import session           #facilitate user sessions
 from flask import redirect
 from os import urandom
-from datetime import date
 
 from utils.auth import AuthService
 from utils.db import *
-from apis import unsplash, weather, kanyeQuote, news, meme
+from apis import unsplash, weather, kanyeQuote, news
 import time
 
 app = Flask(__name__)
@@ -30,12 +29,16 @@ def landingpage():
             weatherNow = weather.getWeatherForCurrentLocation()
             yeQuote = kanyeQuote.getQuote()
             newsArticles = news.getNews()
-            memes = meme.getMeme()
+            reminders = loadReminderForUser(currentUserResponse.data['username']).data
             # return render_template('mainPage.html', bgImg = imageUrl, weatherNow = weatherNow, news = newsArticles, kanyeQuote = yeQuote, name = currentUser["displayName"], time=time.time(), memes=memes)
-            return render_template('shady.html', bgImg = imageUrl, weatherNow = weatherNow, news = newsArticles, kanyeQuote = yeQuote, name = currentUser["displayName"], time=time.time())
+            return render_template('shady.html', bgImg = imageUrl, weatherNow = weatherNow, news = newsArticles, kanyeQuote = yeQuote, name = currentUser["displayName"], time=time.time(), reminders = reminders)
 
     return render_template( 'login.html' ) # Render the login template
 
+@app.route("/completeReminder/<id>")
+def completeReminder(id):
+    completeReminderInDb(id)
+    return redirect("/")
 
 @app.route("/login", methods=['GET', 'POST'])
 def login():
@@ -70,7 +73,6 @@ def register():
             return redirect("/login") #After registering, brings you to login
         else:
             return render_template('register.html', error='Username taken')
-
 
 @app.route("/logout")
 def logout():
