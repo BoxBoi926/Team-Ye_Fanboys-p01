@@ -1,7 +1,7 @@
 import urllib.request as urlrequest
 import json
 
-apiKey = "fb21856f1014477781b750989ad84d99"
+apiKey = "api_key"
 
 def getNews():
     '''Grabs news from the news api.'''

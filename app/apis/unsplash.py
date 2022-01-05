@@ -2,7 +2,7 @@ import urllib.parse as urlparse, urllib.request as urlrequest
 import json
 from flask import url_for
 
-apiKey = 'q61EMMmSkbauKb5IHx-wFYIb6hct5J2-2t5qBdxCMdo'
+apiKey = 'api_key'
 
 def getUnsplashPhoto():
     '''Grabs a random image from Unsplash.'''
