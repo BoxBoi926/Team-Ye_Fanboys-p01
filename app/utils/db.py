@@ -26,6 +26,7 @@ def initializeDatabase():
 
 # AUTH
 def addUser(username, displayName, password):
+    '''Adds a new user into the database.'''
     try:
         c.execute("INSERT INTO users (username, displayName, password) VALUES(? , ?, ?)", (username, displayName, password))
         db.commit()
@@ -35,6 +36,7 @@ def addUser(username, displayName, password):
         return Response(False, None, err)
 
 def getUserByUsername(username):
+    '''Gets the info of user based on username.'''
     try:
         c.execute("SELECT * FROM users WHERE username = ?", (username,))
         data = c.fetchone()
@@ -46,6 +48,7 @@ def getUserByUsername(username):
         return Response(False, None, err)
 
 def addReminder(username, reminderText, dueDate):
+    '''Adds a new reminder, given an username, reminder text, and due date input.'''
     try:
         c.execute('INSERT INTO reminders (username, reminderDesc, dueDate, isCompleted) VALUES(?, ?, ?, ?)', (username, reminderText, dueDate, 0))
         db.commit()

@@ -20,8 +20,8 @@ P01: Main Webpage
   <div class="d-flex vh-100 position-relative align-items-center justify-content-center" style="background: rgba(0,0,0,0.2); flex: 1">
     
     <div class="p-4 text-center">
-        <h1 class="text-white display-1 fw-normal" id="date"></h1>
-        <h1 class="text-white display-5 fw-normal" id="greeting"></h1>
+      <h1 class="text-white display-1 fw-normal" id="date"></h1>
+      <h1 class="text-white display-5 fw-normal" id="greeting"></h1>
     </div>
 
     <div class="position-absolute p-4 d-flex flex-column position-relative align-items-center justify-content-center" style="bottom: 0">
@@ -82,6 +82,12 @@ P01: Main Webpage
       <img class="px-2" src="https://www.appetite.org.uk/wp-content/uploads/2018/11/news-blog-icon-white.png" height="36">
     </div>
   </button>
+  <button type="button" data-bs-toggle="modal" data-bs-target="#reminder" class="btn btn-unstyled position-absolute p-4 text-white" style="bottom: 0; right: 0;">
+    <div class="d-flex flex-row align-items-center justify-content-start">
+      <div class="fs-5">Reminder</div>
+      <img class="px-2" src="../static/images/reminderIcn.png" height="36">
+    </div>
+  </button>
 
   <div class="modal fade" id="news" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -97,6 +103,47 @@ P01: Main Webpage
               <h3>{{ new['title'] }}</h3>
             </a>
           {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="reminder" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Reminders</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addReminder">
+            Add New Reminder
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="addReminder" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Add New Reminder</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form action="/" method="POST">
+            <div class="">
+              <label for="">Reminder:</label>
+              <input class="form-control" type="text" name="reminderText">
+            </div>
+            <div class="">
+              <label for="">Due Date:</label>
+              <input class="form-control" type="date" name="dueDate">
+            </div>
+            <input class="btn btn-primary" type="submit" name="sub1" value="Add Reminder">
+          </form>
         </div>
       </div>
     </div>

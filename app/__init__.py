@@ -25,7 +25,7 @@ def landingpage():
 
         if currentUser: #Checks if user is logged in
             if request.method == "POST":
-                print(addReminder(currentUserResponse.data['username'], request.values['reminderText'], request.values['dueDate']).errorMessage)
+                addReminder(currentUserResponse.data['username'], request.values['reminderText'], request.values['dueDate'])
             imageUrl = unsplash.getUnsplashPhoto()
             weatherNow = weather.getWeatherForCurrentLocation()
             yeQuote = kanyeQuote.getQuote()
