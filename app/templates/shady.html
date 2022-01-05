@@ -93,12 +93,12 @@ P01: Main Webpage
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Latest News</h5>
+          <div class="modal-title" id="exampleModalLabel">Latest News</div>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body">
+        <div class="modal-body text-center">
           {% for new in news %}
-            <a href="{{ new['url'] }}" class="py-2 text-decoration-none">
+            <a href="{{ new['url'] }}" class="text-decoration-none fs-2">
               <img src="{{ new['urlToImage'] }}" width="350">
               <h3>{{ new['title'] }}</h3>
             </a>
