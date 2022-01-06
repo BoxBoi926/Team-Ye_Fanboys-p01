@@ -149,6 +149,10 @@ davidC -- 2022-1-3 09:26
 - assisted Shadman with styling elements 
 - assisted Shadman with time function and kanye west styling, as well as background styling and general layout
 
+andyL -- 2022-1-3 09:26
+
+- started implmenting the reminders system
+
 shadmanR -- 2022-1-4 09:28
 
 - Styled website further
@@ -158,3 +162,7 @@ davidC -- 2022-1-4 09:29
 
 - Assisted shadman with styling
 - added qof post with lo-fi background
+
+andyL -- 2022-1-5 00:00 
+
+- finished implementing the reminders system, including implementing it onto the new site
